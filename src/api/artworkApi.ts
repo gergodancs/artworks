@@ -4,15 +4,12 @@ import { SearchResult } from "../store/model";
 export const artworkApi = createApi({
 	reducerPath: "artworkApi",
 	baseQuery: fetchBaseQuery({
-		baseUrl: "https://api.artic.edu/api/v1/artworks/search?",
+		baseUrl: "https://api.artic.edu/api/v1/artworks",
 	}),
 	endpoints: (builder) => ({
 		getArtworks: builder.query<SearchResult, string>({
 			query(query: string) {
-				return `q=${query}`;
-			},
-			transformResponse(response: { data: { artwork: SearchResult } }) {
-				return response.data.artwork;
+				return `search?q=${query}`;
 			},
 		}),
 	}),

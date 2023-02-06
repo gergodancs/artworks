@@ -1,11 +1,11 @@
 export interface SearchResult {
-	config: {};
-	data: Artwork[];
-	info: {
+	config?: {};
+	data?: Artwork[];
+	info?: {
 		license_text: string;
 	};
-	pagination: Pagination;
-	preference: unknown;
+	pagination?: Pagination;
+	preference?: unknown;
 }
 
 type Pagination = {
@@ -30,7 +30,4 @@ type Artwork = {
 	timestap: string;
 	title: string;
 	_score: number;
-};
-export type ArtworkState = {
-	searchResult: SearchResult | null;
 };
