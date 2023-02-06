@@ -1,4 +1,5 @@
 import React from "react";
+import "./card.scss";
 
 export interface CardProps {
 	children: React.ReactNode;

@@ -1,4 +1,5 @@
 import React, { SetStateAction, Dispatch } from "react";
+import "./search-bar.scss";
 
 interface SearchBarProps {
 	searchQuery: string;
@@ -11,7 +12,7 @@ const SearchBar = (props: SearchBarProps) => {
 		setSearchQuery(event.target.value);
 	};
 	return (
-		<>
+		<div className="searchbar-container">
 			<label htmlFor="search">Alkotások keresése: </label>
 			<input
 				type="text"
@@ -19,7 +20,7 @@ const SearchBar = (props: SearchBarProps) => {
 				value={searchQuery}
 				onChange={(e) => onInputChange(e)}
 			/>
-		</>
+		</div>
 	);
 };
 

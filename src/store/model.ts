@@ -16,10 +16,11 @@ type Pagination = {
 	current_page: number;
 };
 
-type Artwork = {
+export type Artwork = {
 	api_link: string;
 	api_model: string;
 	id: number;
+	image_id?: string;
 	is_boosted: boolean;
 	thumbnail: {
 		alt_text: string;

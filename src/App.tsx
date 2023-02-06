@@ -6,8 +6,6 @@ import NavBar from "./app/components/nav/nav";
 import Footer from "./app/components/footer/footer";
 import Favourites from "./app/pages/favourites/favourites";
 import Details from "./app/pages/details/details";
-import { useAppDispatch } from "./store/hooks";
-import { useGetArtworksQuery } from "./api/artworkApi";
 
 function App() {
 	const { t, i18n } = useTranslation("common");
