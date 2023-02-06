@@ -1,0 +1,14 @@
+.nav-container {
+	max-width: 100%;
+	padding: 10px 20px;
+	display: flex;
+	justify-content: space-between;
+
+	ul {
+		list-style: none;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+	}
+}

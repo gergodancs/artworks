@@ -1,25 +1,23 @@
-import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
-import type { RootState } from './store'
-
-// Define a type for the artwork state
-
-
-// Define the initial state using that type
-
-const initialState = undefined;
-
+import axios from "axios";
+import { createSlice } from "@reduxjs/toolkit";
+import type { PayloadAction } from "@reduxjs/toolkit";
+import type { AppDispatch, RootState } from "./store";
+import { ArtworkState, SearchResult } from "./model";
 
 export const artworkSlice = createSlice({
-    name: "artwork",
-    initialState,
-    reducers:{}
+	name: "artwork",
+	initialState: {
+		searchResult: null,
+	} as ArtworkState,
+	reducers: {
+		setSearchResult: (state, action: PayloadAction<SearchResult>) => {
+			state.searchResult = action.payload;
+		},
+	},
+});
 
-})
+export const { setSearchResult } = artworkSlice.actions;
 
-export const {} = artworkSlice.actions
+export const artworks = (state: RootState) => state.artwork.searchResult;
 
-// Other code such as selectors can use the imported `RootState` type
-export const selectCount = (state: RootState) => state.counter.value
-
-export default artworkSlice.reducer
+export default artworkSlice.reducer;
