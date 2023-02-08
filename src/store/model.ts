@@ -31,4 +31,5 @@ export type Artwork = {
 	timestap: string;
 	title: string;
 	_score: number;
+	isFavourite: boolean;
 };

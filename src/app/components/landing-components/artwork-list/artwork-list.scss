@@ -1,0 +1,27 @@
+.results-container {
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	justify-items: center;
+	align-items: center;
+}
+.favIcon {
+	color: rgba(247, 96, 96, 0.685);
+	justify-self: flex-end;
+	transition-duration: 0.5s;
+	:hover {
+		cursor: pointer;
+		transition-duration: 0.5s;
+		transform: scale(0.95);
+		color: red;
+	}
+}
+
+.title-wrapper {
+	width: 90%;
+	height: 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SearchBar from "../../components/landing-components/search-bar/searchBar";
-import Results from "../../components/landing-components/search-results/results";
+import ArtworkList from "../../components/landing-components/artwork-list/artwork-list";
 
 const Header = () => {
 	const [searchQuery, setSearchQuery] = useState<string>("");
@@ -8,7 +8,7 @@ const Header = () => {
 	return (
 		<div className="landing-container">
 			<SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-			{searchQuery && <Results searchQuery={searchQuery} />}
+			{searchQuery && <ArtworkList searchQuery={searchQuery} />}
 		</div>
 	);
 };

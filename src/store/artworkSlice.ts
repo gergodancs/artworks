@@ -11,12 +11,22 @@ export const artworkSlice = createSlice({
 	initialState,
 	reducers: {
 		addFavourite: (state, action: PayloadAction<Artwork>) => {
-			state.push(action.payload);
+			const existingFavourites = state.filter(
+				(artwork) => artwork.id === action.payload.id,
+			);
+			if (existingFavourites.length > 0) {
+				return;
+			} else {
+				state.push(action.payload);
+			}
+		},
+		deleteFavourite: (state, action: PayloadAction<number>) => {
+			return state.filter((artwork) => artwork.id !== action.payload);
 		},
 	},
 });
 
-export const { addFavourite } = artworkSlice.actions;
+export const { addFavourite, deleteFavourite } = artworkSlice.actions;
 
 export const artworks = (state: RootState) => state.artwork;
 
